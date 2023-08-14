@@ -1,0 +1,21 @@
+#barra {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: blue;
+  color: white;
+  font-size: 20px;
+}
+
+#boton {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 50px;
+  background-color: rgb(11, 183, 11);
+  color: white;
+  font-size: 20px;
+}

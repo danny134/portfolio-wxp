@@ -1,0 +1,12 @@
+.outer-container {
+  display: flex;
+  height: 100%;
+  flex: 1;
+  width: 100%;
+}
+
+.outer-container-flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}

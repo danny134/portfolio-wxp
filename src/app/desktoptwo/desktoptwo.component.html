@@ -1,0 +1,26 @@
+<div
+  class="outer-container-flex"
+  ngxExplorerDndContainer
+  ngxDragSelection
+  (dragInProgress)="dragInProgress($event)"
+  (selectedElementsChange)="selectedElementsChange($event)"
+  (targetChange)="targetChange($event)"
+  (drop)="sortDrop($event)"
+  [sortingEnabled]="true"
+  [selectionAllowed]="!isDragInProgress"
+  [badge]="badgeCount"
+  [cancelAnimation]="cancelAnimation"
+  [selectionDivElement]="myElement"
+>
+  <div
+    *ngFor="let item of allTogether"
+    ngxExplorerDndTarget
+    ngxExplorerDndElement
+    [dndElementData]="item.name"
+  >
+    <app-file [myId]="item.name" *ngIf="item.type === 'FILE'"> </app-file>
+
+    <app-folder [myId]="item.name" *ngIf="item.type === 'DIRECTORY'">
+    </app-folder>
+  </div>
+</div>
