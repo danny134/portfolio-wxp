@@ -11,6 +11,7 @@
   [badge]="badgeCount"
   [cancelAnimation]="cancelAnimation"
   [selectionDivElement]="myElement"
+  (click)="openDialog()"
 >
   <div
     *ngFor="let item of allTogether"

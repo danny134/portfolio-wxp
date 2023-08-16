@@ -7,6 +7,8 @@ import {
 import { FileFolder, FileFolderType, moveItemInArray } from 'ngx-explorer-dnd';
 import { FileComponent } from '../childs/file/file.component';
 import { FolderComponent } from '../childs/folder/folder.component';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogWindowsComponent } from '../dialog-windows/dialog-windows.component';
 
 @Component({
   selector: 'app-desktoptwo',
@@ -62,13 +64,22 @@ export class DesktoptwoComponent {
   }
   // ----- HELPER
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
     // Example to set a custom selection div HTMLElement
     // this.myElement = document.createElement('div');
     // this.myElement.style.position = 'absolute';
     // this.myElement.style.width = '100px';
     // this.myElement.style.height = '100px';
     // this.myElement.style.backgroundColor = 'green';
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogWindowsComponent, {
+      panelClass: 'custom-dialog-container',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+    });
   }
   ngAfterViewInit() {
     // Actualizar la cuadrícula después de la vista inicial
